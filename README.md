@@ -1,4 +1,4 @@
-## parcelyou (v1.0 still in development)
+## parcel4you (v1.0 still in development)
 Allow user to get access to rates from multiple local courier providers
 
 ![1](https://user-images.githubusercontent.com/51852197/235719033-184e60c9-c578-4f37-ac14-7860b912145e.png)

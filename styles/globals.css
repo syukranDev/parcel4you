@@ -7,5 +7,7 @@ html {
   height: 100%;
 }
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#00416A), to(#E4E5E6)) fixed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00416A), to(#000)) fixed;
 }
+
+/* E4E5E6 */

@@ -2,7 +2,7 @@ import React from 'react'
 
 export const ReviewSection = () => {
   return (
-    <div className='mt-10'>
+    <div className='mt-10 px-10 md:px-20'>
         
         <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
             <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700">

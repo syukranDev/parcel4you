@@ -13,18 +13,15 @@ require('../public/jnt.png')
 
 export const ServiceProvider = () => {
   return (
-    <div class="relative flex overflow-x-hidden">
-        <div class=" animate-marquee whitespace-nowrap flex">
-            <img src='https://gcdnb.pbrd.co/images/x9F8brqasE84.png?o=1' width='350' height='100' className='ml-12 '></img>
-            <img src='https://gcdnb.pbrd.co/images/z7P498vd2SiN.png?o=1'  width='250' height='100' className='ml-12'></img>
-            <img src='https://gcdnb.pbrd.co/images/Pwq3UuvhKOdT.png?o=1'width='250' height='100'  className='ml-12'></img>
-        </div>
-        <div class="absolute top-0  animate-marquee2 whitespace-nowrap flex">
-            <img src='https://gcdnb.pbrd.co/images/x9F8brqasE84.png?o=1' width='350' height='100' className='ml-12'></img>
-            <img src='https://gcdnb.pbrd.co/images/z7P498vd2SiN.png?o=1' width='250' height='100' className='ml-12'></img>
-            <img src='https://gcdnb.pbrd.co/images/Pwq3UuvhKOdT.png?o=1' width='250' height='100' className='ml-12 antialiased'></img>
-        </div>
+   
 
+    <div className=''>
+      <div class="w-full p-4 text-center flex flex-col md:flex-row  justify-center border-gray-200 rounded-lg  sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+              <img src='https://gcdnb.pbrd.co/images/z7P498vd2SiN.png?o=1'  width='250' height='100' className='mx-auto md:mx-4 grayscale hover:grayscale-0'></img>
+              <img src='https://gcdnb.pbrd.co/images/Pwq3UuvhKOdT.png?o=1' width='250' height='100'  className='mx-auto md:mx-4 grayscale hover:grayscale-0'></img>
+              <img src='https://gcdnb.pbrd.co/images/x9F8brqasE84.png?o=1' width='250' height='100' className='mx-auto md:mx-4 grayscale hover:grayscale-0'></img>
+              <img src='https://gcdnb.pbrd.co/images/z7P498vd2SiN.png?o=1'  width='250' height='100' className='mx-auto md:mx-4 grayscale  hover:grayscale-0'></img>
+      </div>
     </div>
   )
 }

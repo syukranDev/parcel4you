@@ -5,10 +5,42 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Form.module.css';
 import { HiAtSymbol, HiFingerPrint, HiOutlineUser } from "react-icons/hi";
+import { useFormik } from 'formik';
+import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/router';
 
 
 export const LoginForm = () => {
-const [show, setShow] = useState({ password: false, cpassword: false })
+    const router = useRouter()
+    const [show, setShow] = useState({ password: false, cpassword: false })
+    const formik = useFormik({
+        initialValues: {
+        email: '',
+        password: ''
+        },
+        onSubmit: handleManualSignIn
+    })
+
+    async function handleManualSignIn(values) {
+        const status = await signIn('credentials', {
+        redirect: false,
+        email: values.email,
+        password: values.password,
+        callbackUrl: '/rates'
+        })
+
+        if (status.ok) {
+            router.push(status.url)
+        }
+    }
+
+    async function handleGoogleSignin() {
+        signIn('google', {callbackUrl: 'http://localhost:3000/rates'})
+    }
+
+    async function handleGithubSignin() {
+        signIn('github', {callbackUrl: 'http://localhost:3000/rates'})
+    }
 
   return (
    <>
@@ -16,7 +48,16 @@ const [show, setShow] = useState({ password: false, cpassword: false })
             <div class="w-full max-w-screen-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             
                 <div className="title mb-5 text-center">
-                    <h1 className='text-gray-800 text-4xl font-bold py-4 '>Login</h1>
+                    <div className='flex flex-row justify-center'>
+                        <h1 className='text-gray-800 text-4xl font-bold py-4 '>
+                            Login | parcel4you 
+                        </h1>
+                        <img src="https://gcdnb.pbrd.co/images/WhM3BGc8GH7H.png?o=1" 
+                             className="h-8 ml-1.5 mt-6" alt="Flowbite Logo" 
+                        />
+
+
+                    </div>
                     <p className='w-3/4 mx-auto text-gray-400'>Create an account to start using our rates calculator.</p>
                 </div>
                 
@@ -74,13 +115,14 @@ const [show, setShow] = useState({ password: false, cpassword: false })
                     </button>
                 </div>
                 <hr></hr>
+                <p className='text-center'></p>
                 <div className="input-button">
-                    <button type='button' className={styles.button_custom}>
+                    <button onClick={handleGoogleSignin} type='button' className={styles.button_custom}>
                         Sign In with Google <Image src={'/assets/google.svg'} width="20" height={20} ></Image>
                     </button>
                 </div>
                 <div className="input-button">
-                    <button type='button' className={styles.button_custom}>
+                    <button onClick={handleGithubSignin} type='button' className={styles.button_custom}>
                         Sign In with Github <Image src={'/assets/github.svg'} width={25} height={25}></Image>
                     </button>
                 </div>

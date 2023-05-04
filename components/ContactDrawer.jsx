@@ -65,12 +65,12 @@ export const ContactDrawer = () => {
                 </div>
                 <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 w-full focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 block">Send message</button>
             </form>
-            <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                <a href="#" className="hover:underline">info@company.com</a>
+            {/* <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                <a href="#" className="hover:underline">admin@gmail.com</a>
             </p>
             <p className="text-sm text-gray-500 dark:text-gray-400">
                 <a href="#" className="hover:underline">212-456-7890</a>
-            </p>
+            </p> */}
         </div>
     </div>
    

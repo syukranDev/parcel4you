@@ -7,7 +7,7 @@ export const ReviewSection = () => {
         <div class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2">
             <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-tl-lg md:border-r dark:bg-gray-800 dark:border-gray-700">
                 <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">I can't recommend Parcel4U enough.</h3>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">I can't recommend parcel4you enough.</h3>
                     <p class="my-4">"The platform is straightforward to use, and the savings are substantial."</p>
                 </blockquote>
                 <figcaption class="flex items-center justify-center space-x-3">
@@ -21,7 +21,7 @@ export const ReviewSection = () => {
             <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 md:rounded-tr-lg dark:bg-gray-800 dark:border-gray-700">
                 <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Highly recommended!</h3>
-                    <p class="my-4">"Parcel4U helped me save over 50% on my shipping costs, and the process was incredibly easy."</p>
+                    <p class="my-4">"parcel4u helped me save over 50% on my shipping costs, and the process was incredibly easy."</p>
                 </blockquote>
                 <figcaption class="flex items-center justify-center space-x-3">
                     <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png" alt="profile picture"/>
@@ -44,7 +44,7 @@ export const ReviewSection = () => {
                     </div>
                 </figcaption>    
             </figure>
-            <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-gray-200 rounded-br-lg md:rounded-br-lg dark:bg-gray-800 dark:border-gray-700">
+            <figure class="flex flex-col items-center justify-center p-8 text-center bg-white border-gray-200 rounded-bl-lg rounded-br-lg md:rounded-br-lg md:rounded-bl-none  dark:bg-gray-800 dark:border-gray-700">
                 <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Definitely a game-changer.</h3>
                     <p class="my-4">"We've been able to cut down on expenses and optimize our shipping strategy thanks to their service."</p>

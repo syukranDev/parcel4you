@@ -9,6 +9,9 @@ import { useFormik } from 'formik';
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/router';
 
+let baseURL_DEV = 'http://localhost:3000'
+let baseURL_PROD = 'https://parcel4you.vercel.app/'
+
 
 export const LoginForm = () => {
     const router = useRouter()
@@ -35,11 +38,11 @@ export const LoginForm = () => {
     }
 
     async function handleGoogleSignin() {
-        signIn('google', {callbackUrl: 'http://localhost:3000/rates'})
+        signIn('google', {callbackUrl: baseURL_PROD + '/rates' })
     }
 
     async function handleGithubSignin() {
-        signIn('github', {callbackUrl: 'http://localhost:3000/rates'})
+        signIn('github', {callbackUrl: baseURL_PROD + '/rates' })
     }
 
   return (

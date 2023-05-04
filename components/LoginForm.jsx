@@ -47,17 +47,22 @@ export const LoginForm = () => {
 
   return (
    <>
-        <div className='mt-20 mx-auto max-w-screen-md px-4 py-6 '>
+        <div className='mt-10 md:mt-20 mx-auto max-w-screen-md px-4 py-6 '>
             <div class="w-full max-w-screen-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             
                 <div className="title mb-5 text-center">
                     <div className='flex flex-row justify-center'>
-                        <h1 className='text-gray-800 text-4xl font-bold py-4 '>
-                            Login | parcel4you 
+                        <h1 className='text-gray-800 text-2xl md:text-4xl font-bold py-4 '>
+                            Login |
                         </h1>
                         <img src="https://gcdnb.pbrd.co/images/WhM3BGc8GH7H.png?o=1" 
-                             className="h-8 ml-1.5 mt-6" alt="Flowbite Logo" 
+                             className="h-8 m-1.5 mt-5 md:mt-6" alt="Flowbite Logo" 
                         />
+                        <h1 className='text-gray-800 text-2xl md:text-4xl font-bold py-4 '>
+                            parcel4you
+                        </h1>
+
+                        
 
 
                     </div>

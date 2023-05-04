@@ -4,6 +4,7 @@ import Footer from "@/components/FooterSection"
 import Navbar from "@/components/Navbar"
 import { ReviewSection } from "@/components/ReviewSection"
 import { ServiceProvider } from "@/components/ServiceProvider"
+import UnderConstructionAlert from "@/components/UnderConstructionAlert"
 import Image from "next/image"
 
 const landing = () => {
@@ -11,6 +12,7 @@ const landing = () => {
     <>
         <Navbar/>
         <section className='container mx-auto py-20'>
+            <UnderConstructionAlert/>
             <h3 className='text-white text-xl font-semibold mb-10 text-center md:text-9xl '>parcel4you</h3>
             {/* <p className='text-gray-300 text-xl text-center'> 
                 Your one-stop-shop for parcel delivery fees comparisons.

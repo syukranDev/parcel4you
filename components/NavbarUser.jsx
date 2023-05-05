@@ -11,7 +11,7 @@ const NavbarUser = (props) => {
             <span className="self-center text-lg font-semibold whitespace-nowrap text-[#E4E5E6]">parcel4you</span>
         </a>
         <div className="flex flex-row md:order-2 mt-1.5 md:mt-0">
-                <p className='text-white text-sm font-thin '>Welcome, {props.loggedUsername}</p>
+                <p className='text-white text-sm font-thin '>Welcome, {props.loggedUserDetails[0] || props.loggedUserDetails[1]}</p>
                 <button onClick={props.handleSignout}>
                     <ImExit size={20} className='fill-white hover:fill-rose-600 ml-3 mt-0.5'/>
                 </button>

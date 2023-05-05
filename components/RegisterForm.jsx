@@ -5,21 +5,61 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../styles/Form.module.css';
 import { HiAtSymbol, HiFingerPrint, HiOutlineUser } from "react-icons/hi";
-
+import { useFormik } from 'formik';
+import { useRouter } from 'next/router';
+import { registerValidate } from '@/lib/validate';
 
 
 
 export const RegisterForm = () => {
-const [show, setShow] = useState({ password: false, cpassword: false })
+    const router = useRouter()  
+    const [show, setShow] = useState({ password: false, cpassword: false })
+    const formik = useFormik({
+        initialValues: {
+            username: '',
+            email: '',
+            password: '',
+            cpassword: ''
+        },
+        validate: registerValidate,
+        onSubmit: handleManualRegister
+    })
+
+    async function handleManualRegister(values) {
+        console.log(values)
+        const options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(values)
+        }
+
+        await fetch('http://localhost:3000/api/auth/signup', options)
+            .then(res => res.json())
+            .then((data) => {
+                if(data) router.push('http://localhost:3000/rates')
+            })
+    }
 
   return (
    <>
-        <div className='mt-20 mx-auto max-w-screen-md px-4 py-6 '>
-            <div class="w-full max-w-screen-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div className='md:mt-20 mx-auto max-w-lg px-4 py-6'>
+            <div className=" p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
             
                 <div className="title mb-5 text-center">
-                    <h1 className='text-gray-800 text-4xl font-bold py-4 '>Register</h1>
-                    <p className='w-3/4 mx-auto text-gray-400'>Create an account to start using our rates calculator.</p>
+                    <div className='flex flex-row justify-center'>
+                        <h1 className='text-gray-800 text-2xl md:text-4xl font-bold py-4 '>
+                            Register |
+                        </h1>
+                        <img src="https://gcdnb.pbrd.co/images/WhM3BGc8GH7H.png?o=1" 
+                             className="h-8 m-1.5 mt-5 md:mt-6" alt="Flowbite Logo" 
+                        />
+                        <h1 className='text-gray-800 text-2xl md:text-4xl font-bold py-4 '>
+                            parcel4you
+                        </h1>
+
+
+                    </div>
+                    <p className='mt-3 mx-auto text-gray-400'>Create an account to start using our rates calculator.</p>
                 </div>
                 
                 {/* <form class="space-y-6" action="#">
@@ -46,51 +86,59 @@ const [show, setShow] = useState({ password: false, cpassword: false })
                         Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
                     </div>
                 </form> */}
-                <form className='flex flex-col gap-5'>
+                <form onSubmit={formik.handleSubmit} className='flex flex-col gap-5'>
                 <div className={styles.input_group}>
                     <input 
                     type="text"
                     name='username'
                     placeholder='Username'
                     className={styles.input_text}
+                    {...formik.getFieldProps('username')}
                     />
                     <span className='icon flex items-center px-4'>
                         <HiOutlineUser size={25} />
                     </span>
                 </div>
+                {formik.errors.Username && formik.touched.Username ? <span className='text-rose-500'>{formik.errors.username}</span> : <></>}
                 <div className={styles.input_group}>
                     <input 
                     type="email"
                     name='email'
                     placeholder='Email'
                     className={styles.input_text}
+                    {...formik.getFieldProps('email')}
                     />
                     <span className='icon flex items-center px-4'>
                         <HiAtSymbol size={25} />
                     </span>
                 </div>
+                {formik.errors.email && formik.touched.email ? <span className='text-rose-500'>{formik.errors.email}</span> : <></>}
                 <div className={styles.input_group}>
                     <input 
                     type={`${show.password ? "text" : "password"}`}
                     name='password'
                     placeholder='password'
                     className={styles.input_text}
+                    {...formik.getFieldProps('password')}
                     />
                     <span className='icon flex items-center px-4' onClick={() => setShow({ ...show, password: !show.password})}>
                         <HiFingerPrint size={25} />
                     </span>
                 </div>
+                {formik.errors.password && formik.touched.password ? <span className='text-rose-500'>{formik.errors.password}</span> : <></>}
                 <div className={styles.input_group}>
                     <input 
                     type={`${show.cpassword ? "text" : "password"}`}
                     name='cpassword'
                     placeholder='Confirm Password'
                     className={styles.input_text}
+                    {...formik.getFieldProps('cpassword')}
                     />
                     <span className='icon flex items-center px-4' onClick={() => setShow({ ...show, cpassword: !show.cpassword})}>
                         <HiFingerPrint size={25} />
                     </span>
                 </div>
+                {formik.errors.cpassword && formik.touched.cpassword ? <span className='text-rose-500'>{formik.errors.cpassword}</span> : <></>}
                 {/* login buttons */}
                 <div className="input-button">
                     <button type='submit' className={styles.button}>

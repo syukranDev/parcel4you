@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className=" dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center">
-            <img src="https://gcdnb.pbrd.co/images/WhM3BGc8GH7H.png?o=1" className="h-8 mr-1.5 mt-2" alt="Flowbite Logo" />
+            {/* <img src="https://gcdnb.pbrd.co/images/WhM3BGc8GH7H.png?o=1" className="h-8 mr-1.5 mt-2" alt="Flowbite Logo" /> */}
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-[#E4E5E6]">parcel4you</span>
         </a>
         <div className="flex md:order-2">

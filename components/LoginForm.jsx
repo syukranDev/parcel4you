@@ -66,10 +66,10 @@ export const LoginForm = () => {
                         <h1 className='text-gray-800 text-2xl md:text-4xl font-bold py-4 '>
                             Login |
                         </h1>
-                        <img src="https://gcdnb.pbrd.co/images/WhM3BGc8GH7H.png?o=1" 
+                        {/* <img src="https://gcdnb.pbrd.co/images/WhM3BGc8GH7H.png?o=1" 
                              className="h-8 m-1.5 mt-5 md:mt-6" alt="Flowbite Logo" 
-                        />
-                        <h1 className='text-gray-800 text-2xl md:text-4xl font-bold py-4 '>
+                        /> */}
+                        <h1 className='text-gray-800 text-2xl md:text-4xl font-bold py-4 pl-2 '>
                             parcel4you
                         </h1>
 
